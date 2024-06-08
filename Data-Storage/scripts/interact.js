@@ -6,7 +6,7 @@ async function main() {
 
     console.log('Initial Data: ', await dataStorage.getData());
 
-    const tx = await dataStorage.setData('Hello BlockChain from interact.js!');
+    const tx = await dataStorage.setData('Hello, from interact!');
     await tx.wait();
 
     console.log('Updated data: ', await dataStorage.getData());
