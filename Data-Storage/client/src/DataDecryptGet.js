@@ -45,7 +45,7 @@ const contractABI = [
 
 const contractAddress = '0x7157Dd02EAeADc9B5694CC2520F8bb8FD8151BA7';
 
-const DataEncryptSend = () => {
+const DataDecryptGet = () => {
   const [web3, setWeb3] = useState(null);
   const [contract, setContract] = useState(null);
   const [accounts, setAccounts] = useState([]);
@@ -101,35 +101,6 @@ const DataEncryptSend = () => {
             generateKey();
   }, []);
 
-  const handleSetData = async (encryptedText) => {
-    try {
-      await contract.methods.setData(encryptedText).send({ from: accounts[0] });
-      const updatedData = await contract.methods.getData().call();
-      setStoredData(updatedData);
-      setNewData(encryptedText);
-    } catch (error) {
-      console.error('Error setting data:', error);
-    }
-  };
-
-  const handleEncrypt = async () => {
-    const ivArray = crypto.getRandomValues(new Uint8Array(12));
-    setIv(ivArray);
-
-    const encoded = new TextEncoder().encode(plaintext);
-    const encryptedBuffer = await crypto.subtle.encrypt(
-        {
-            name: "AES-GCM",
-            iv: ivArray,
-        },
-        key,
-        encoded
-    );
-
-    const encryptedBase64 = btoa(String.fromCharCode(...new Uint8Array(encryptedBuffer)));
-    setCiphertext(encryptedBase64);
-    };
-
     const handleDecrypt = async (cipher, iv_code) => {
         try {
             const ciphertextArray = Uint8Array.from(atob(cipher), c => c.charCodeAt(0));
@@ -157,25 +128,11 @@ const DataEncryptSend = () => {
       <h1>Data Storage</h1>
       <p>Contract Address: {contractAddress}</p>
       <p>Stored Data: {storedData}</p>
-
-       <textarea
-            value={plaintext}
-            onChange={(e) => setPlaintext(e.target.value)}
-            placeholder="Enter text to encrypt"
-            rows="4"
-            cols="50"
-        ></textarea><br />
-        <button onClick={handleEncrypt}>Encrypt</button><br />
-
-        <p>{ciphertext}</p>
-        <button onClick={() => handleSetData(ciphertext, iv)}>Send this encrypted data to the blockchain</button>
-
-        <br />
-        <br />
-        <button onClick={() => handleDecrypt(storedData, iv)}>Decrypt</button>
+      <button onClick={() => handleDecrypt(storedData, iv)}>Decrypt</button>
+      <p>{decryptedText}</p>
 
     </div>
   );
 };
 
-export default DataEncryptSend;
+export default DataDecryptGet;
