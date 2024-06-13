@@ -101,17 +101,6 @@ const DataEncryptSend = () => {
             generateKey();
   }, []);
 
-  const handleSetData = async (encryptedText) => {
-    try {
-      await contract.methods.setData(encryptedText).send({ from: accounts[0] });
-      const updatedData = await contract.methods.getData().call();
-      setStoredData(updatedData);
-      setNewData(encryptedText);
-    } catch (error) {
-      console.error('Error setting data:', error);
-    }
-  };
-
   const handleEncrypt = async () => {
     const ivArray = crypto.getRandomValues(new Uint8Array(12));
     setIv(ivArray);
@@ -128,6 +117,17 @@ const DataEncryptSend = () => {
 
     const encryptedBase64 = btoa(String.fromCharCode(...new Uint8Array(encryptedBuffer)));
     setCiphertext(encryptedBase64);
+    };
+
+    const handleSetData = async (encryptedText) => {
+      try {
+        await contract.methods.setData(encryptedText).send({ from: accounts[0] });
+        const updatedData = await contract.methods.getData().call();
+        setStoredData(updatedData);
+        setNewData(encryptedText);
+      } catch (error) {
+        console.error('Error setting data:', error);
+      }
     };
 
     const handleDecrypt = async (cipher, iv_code) => {
@@ -168,7 +168,7 @@ const DataEncryptSend = () => {
         <button onClick={handleEncrypt}>Encrypt</button><br />
 
         <p>{ciphertext}</p>
-        <button onClick={() => handleSetData(ciphertext, iv)}>Send this encrypted data to the blockchain</button>
+        <button onClick={() => handleSetData(ciphertext)}>Send this encrypted data to the blockchain</button>
 
         <br />
         <br />
