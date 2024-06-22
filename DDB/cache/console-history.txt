@@ -1,0 +1,99 @@
+await db.deleteData("1");
+// Delete data
+console.log("Value for key1:", value);
+const value = await db.getData("1");
+// Get data
+await db.setData("1", "hello");
+// Set data
+const db = await DecentralizedDatabaseV1.attach(contractAddress);
+const DecentralizedDatabaseV1 = await ethers.getContractFactory("DecentralizedDatabaseV1");
+const contractAddress = "0x7213Ea3B9cC044434630C50bcea352F1B8396fc7";
+const [owner] = await ethers.getSigners();
+.load scripts/interactV1.js
+load scripts/interactV1.js
+await db.deleteData("key1");
+// Delete data
+console.log("Value for key1:", value);
+const value = await db.getData("key1");
+// Get data
+await db.setData("key1", "value1");
+// Set data
+const db = await DecentralizedDatabaseV1.attach(contractAddress);
+const DecentralizedDatabaseV1 = await ethers.getContractFactory("DecentralizedDatabaseV1");
+const contractAddress = "0x7213Ea3B9cC044434630C50bcea352F1B8396fc7";
+const [owner] = await ethers.getSigners();
+.load scripts/interactV1.js
+.exit
+await db.deleteData("key1");
+// Delete data
+console.log("Value for key1:", value);
+const value = await db.getData("key1");
+// Get data
+await db.setData("key1", "value1");
+// Set data
+const db = await DecentralizedDatabase.attach(contractAddress);
+const DecentralizedDatabaseV1 = await ethers.getContractFactory("DecentralizedDatabaseV1");
+const contractAddress = "0x7213Ea3B9cC044434630C50bcea352F1B8396fc7";
+const [owner] = await ethers.getSigners();
+.load scripts/interactV1.js
+// Delete data
+console.log("Value for key1:", value);
+const value = await db.getData("key1");
+// Get data
+await db.setData("key1", "value1");
+// Set data
+const db = await DecentralizedDatabase.attach(contractAddress);
+const DecentralizedDatabase = await ethers.getContractFactory("DecentralizedDatabase");
+const contractAddress = "0x7213Ea3B9cC044434630C50bcea352F1B8396fc7";
+const [owner] = await ethers.getSigners();
+.editor
+.help
+.exit
+console.log("Addr2 deleted data for key1");
+await db.connect(addr2).deleteData("key1");
+// Addr2 attempts to delete data
+console.log("Addr1 set data for key1");
+await db.connect(addr1).setData("key1", "value1");
+// Addr1 sets data
+console.log(`Addr2 delete permission: ${hasDeletePermission}`);
+let hasDeletePermission = await db.canDelete(addr2.address);
+console.log(`Addr1 write permission: ${hasWritePermission}`);
+let hasWritePermission = await db.canWrite(addr1.address);
+// Check permissions
+console.log(`Added ${addr2.address} as deleter`);
+await db.addDeleter(addr2.address);
+// Grant addr2 delete permissions
+console.log(`Added ${addr1.address} as writer`);
+await db.addWriter(addr1.address);
+// Grant addr1 write permissions
+const db = await DecentralizedDatabase.attach(contractAddress);
+const DecentralizedDatabase = await ethers.getContractFactory("DecentralizedDatabase");
+const contractAddress = "0x332D507B3227f15e1189BF4d96C2fEF8e27B49BE";
+const [owner, addr1, addr2] = await ethers.getSigners();
+.load scripts/interact.js
+.exit
+console.log("Addr2 deleted data for key1");
+await db.connect(addr2).deleteData("key1");
+// Addr2 attempts to delete data
+console.log("Addr1 set data for key1");
+await db.connect(addr1).setData("key1", "value1");
+// Addr1 sets data
+console.log(`Addr2 delete permission: ${hasDeletePermission}`);
+let hasDeletePermission = await db.canDelete(addr2.address);
+console.log(`Addr1 write permission: ${hasWritePermission}`);
+let hasWritePermission = await db.canWrite(addr1.address);
+// Check permissions
+console.log(`Added ${addr2.address} as deleter`);
+await db.addDeleter(addr2.address);
+// Grant addr2 delete permissions
+console.log(`Added ${addr1.address} as writer`);
+await db.addWriter(addr1.address);
+// Grant addr1 write permissions
+const db = await DecentralizedDatabase.attach(contractAddress);
+const DecentralizedDatabase = await ethers.getContractFactory("DecentralizedDatabase");
+const contractAddress = "0x635B7A071f9A9CDf516ec7482DC9bFdB7aA39629";
+const [owner, addr1, addr2] = await ethers.getSigners();
+.load scripts/interact.js
+.load
+.editor
+.help

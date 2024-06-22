@@ -1,0 +1,77 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\cs-joy-github-repo\\blockchain_exploration\\DDB\\contracts\\DecentralizedDatabase.sol": {
+      "lastModificationDate": 1719082271706,
+      "contentHash": "039322466c47316b007976d923e69e3c",
+      "sourceName": "contracts/DecentralizedDatabase.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "DecentralizedDatabase"
+      ]
+    },
+    "C:\\cs-joy-github-repo\\blockchain_exploration\\DDB\\contracts\\DecentralizedDatabaseV1.sol": {
+      "lastModificationDate": 1719083818311,
+      "contentHash": "70576264d18d092df78d1bd142181066",
+      "sourceName": "contracts/DecentralizedDatabaseV1.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "DecentralizedDatabaseV1"
+      ]
+    }
+  }
+}
