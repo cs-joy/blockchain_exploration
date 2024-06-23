@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\cs-joy-github-repo\\blockchain_exploration\\CRUD\\contracts\\CRUD_APP.sol": {
+      "lastModificationDate": 1719125595435,
+      "contentHash": "f8da7b6896b2221c5145a56c9094db78",
+      "sourceName": "contracts/CRUD_APP.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CRUD_APP"
+      ]
+    }
+  }
+}
